@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size:  62.5%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    height: 90vh
+    ;
+}
+
+.home{
+    background-color: rgb(0, 255, 128);
+    padding: 5rem 20%;
+}
+
+#image{
+    width:20rem;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+
+.name{
+    margin: 1rem 0 1rem 3rem;
+    font-size: 3rem;
+}
+
+
+.links > a{
+    margin:1rem 0;
+    font-size: 2rem;
+    padding: 0 1rem; 
+}
+
+
+.following__section{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.following__section > * {
+    font-size: 2rem;
+}
+
+
+.projects{
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+    height: 110vh
+    ;
+}
+
+.projects__heading{
+    font-size: 3rem;
+}
+
+.projects__details{
+    margin: 2rem 0 ;
+    border: 2px solid gray;
+    padding: 2rem;
+
+}
+
+.prj_name{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.prj__description{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+.source , .prj_link {
+    font-size: 2rem;
+    margin: 0 1rem;
+}

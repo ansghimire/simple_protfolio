@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANISH_GHIMIRE:PROTFOLIO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="main">
+    <section class="home">
+      <img alt="my_img" id="image">
+      <div class="name"></div>
+      <div class="following__section">
+        <div id="followers"></div>
+        <div id="following"></div>
+      </div>
+      
+      <div class="links">
+        <a href="https://twitter.com/anish25280459">Twitter Link</a>
+        <a id="git">Github Link</a>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="projects">
+    <section class="projects__section">
+      <h1 class="projects__heading">My projects</h1>
+       <div class="projects__details">
+           <h2 id="project__name" class="prj_name"></h2>
+           <h2 id="project__description" class="prj__description"></h2>
+            <a id="source_code" class="source">Source Code</a>
+           <a id="project_link" class="prj_link">Project Link</a>
+       </div>
+
+       <div class="projects__details">
+        <h2 id="project__name1" class="prj_name"></h2>
+        <h2 id="project__description1" class="prj__description"></h2>
+         <a id="source_code1" class="source">Source Code</a>
+        <a id="project_link1" class="prj_link">Project Link</a>
+    </div>
+
+    <div class="projects__details">
+      <h2 id="project__name2" class="prj_name"></h2>
+      <h2 id="project__description2" class="prj__description"></h2>
+       <a id="source_code2" class="source">Source Code</a>
+  </div>
+
+  <div class="projects__details">
+    <h2 id="project__name3" class="prj_name"></h2>
+    <h2 id="project__description3" class="prj__description"></h2>
+     <a id="source_code3" class="source">Source Code</a>
+</div>
+
+<div class="projects__details">
+  <h2 id="project__name4" class="prj_name"></h2>
+  <h2 id="project__description4" class="prj__description"></h2>
+   <a id="source_code4" class="source">Source Code</a>
+   <!-- <a id="project_link4" class="prj_link">Project Link</a> -->
+</div>
+
+
+    </section>
+
+  </div>
+
+
+
+
+  <script>
+    fetch(`https://api.github.com/users/ansghimire`)
+      .then(response => response.json())
+      .then(data => {
+        // console.log(data);
+        image.src = data['avatar_url'];
+        document.querySelector('.name').innerHTML = data['name'];
+        followers.innerHTML = `Followers: ${data['followers']}`;
+        following.innerHTML = `Following: ${data['following']}`;
+        git.href = data['html_url'];
+      });
+
+      fetch(`https://api.github.com/users/ansghimire/repos`)
+      .then(res=> res.json())
+      .then(data=> {
+        project__name.innerHTML = `Title of the project: ${data[0]['name']}`;
+        project__description.innerHTML = `Description: ${data[0]['description']}`;
+        source_code.href = data[0]['svn_url'];
+        project_link.href = data[0]['homepage'];
+
+        project__name1.innerHTML = `Title of the project: ${data[1]['name']}`;
+        project__description1.innerHTML = `Description: ${data[1]['description']}`;
+        source_code1.href = data[1]['svn_url'];
+        project_link1.href = data[1]['homepage'];
+
+        project__name2.innerHTML = `Title of the project: ${data[2]['name']}`;
+        project__description2.innerHTML = `Description: ${data[2]['description']}`;
+        source_code2.href = data[2]['svn_url'];
+
+        
+        project__name3.innerHTML = `Title of the project: ${data[3]['name']}`;
+        project__description3.innerHTML = `Description: ${data[3]['description']}`;
+        source_code3.href = data[3]['svn_url'];
+       
+        project__name4.innerHTML = `Title of the project: ${data[4]['name']}`;
+        project__description4.innerHTML = `Description: ${data[4]['description']}`;
+        source_code4.href = data[4]['svn_url'];      
+        // project_link4.href = data[4]['homepage'];  
+
+
+      })
+   
+
+
+
+   
+
+  </script>
+
+</body>
+
+</html>
